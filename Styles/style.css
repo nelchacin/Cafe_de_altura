@@ -61,12 +61,14 @@ nav a {
 div.section2 {
     display: flex;
     align-items: flex-start;
+    background-color: 
+    rgb(227, 222, 215, 0.3);
 }
 
 .section2text {
     padding-top: 130px;
     padding-left: 50px;
-    text-shadow: 1px 1px 8px #515051;
+   
 
 }
 
@@ -82,11 +84,11 @@ p.section2P {
 
 .aSection2 {
     text-decoration: none;
-    box-shadow: 1px 1px 2px #515051;;
+    box-shadow: 0px 0px 4px #515051;;
 
 }
 .section2Img img{
-    box-shadow: 2px 2px 8px #515051;
+    box-shadow: 0px 0px 4px #515051;
 }
   
 
@@ -351,10 +353,6 @@ textarea {
 
 }
 
-#checkBoxForm {
-    
-    
-}
 
 .mailSect7 {
     display: flex;
@@ -527,4 +525,16 @@ footer {
 .section4 .card:hover {
     background-color: #E3DED7;
     ;
+}
+
+#heroImage{
+    border-radius: 20px;
+}
+
+#localPicture{
+    border-radius: 20px;
+}
+
+#localPicture{
+    border-radius: 20px;
 }
