@@ -31,11 +31,16 @@ function addProduct(e) {
         const button = e.target;
         const item = button.closest(".card-body")
         const tittleProduct = item.querySelector(".card-title").textContent;
-        const priceProduct = item.querySelector(".price").textContent*1;
+        const priceProduct = item.querySelector(".price").textContent * 1;
+        // const imgProduct = item.querySelector("img").src;
+        // console.log(imgProduct);
 
-        console.log(tittleProduct,priceProduct);
+        addItemToBag(tittleProduct, priceProduct)
     }
+    function addItemToBag(tittleProduct, priceProduct) {
+        console.log(tittleProduct, priceProduct);
 
+    }
 }
 
 
