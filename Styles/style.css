@@ -210,7 +210,7 @@ h3.h3Section3 {
     flex-direction: column;
     align-items: center;
     width: 1280px;
-    height: 604px;
+    height: auto;
     background-color: #2A5B45;
     padding-top: 25px;
 }
@@ -232,7 +232,7 @@ h3.h3Section3 {
     display: flex;
     flex-direction: column;
     width: 668px;
-    height: 160px;
+    height: auto;
     background-color: #FFFFFF;
     border-radius: 22px;
 }
@@ -247,12 +247,13 @@ h3.h3Section3 {
     flex-direction: column;
     margin-top: 30px;
     width: 668px;
-    height: 180px;
+    height: auto;
     background-color: #FFFFFF;
     border-radius: 22px;
 }
 
 .section5A2 h4 {
+    padding-top: 15px;
     font-size: 20px;
 }
 
@@ -282,8 +283,14 @@ h3.h3Section3 {
     color: #FFFFFF;
     padding-top: 15px;
     font-size: 14px;
+    padding-bottom: 40px;
 
 }
+
+.linkResolvemos:Hover {
+    color: #ffff;;
+}
+
 
 details {
 
@@ -571,13 +578,14 @@ footer {
 .shoppingCard{
     background-color: #2B2A2B;
     color: whitesmoke;
-    width: 400px;
-    height: 200px;
+    font-size: 10px;
+    width: 600px;
+    height: auto;
 }
 
 .shopping-cart-items {
     background-color: #2B2A2B;
-    padding: 20px 0px;
+    padding: 20px
   }
   
   .shopping-cart-header {
@@ -600,3 +608,24 @@ footer {
   .shopping-cart-total {
     min-height: 96px;
   }
+  
+  .linkQuestions{
+    text-decoration: none;
+    color: #1F1815;
+  }
+
+  .linkQuestions:hover{
+    color: #1F1815;
+  }
+  
+.pQuestion{
+    position: relative;
+    overflow: hidden;
+    max-height: 0;
+    transition:  max-height 0.4s ease-out;
+}
+
+.open_close{
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}

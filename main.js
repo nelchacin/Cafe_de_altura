@@ -1,5 +1,9 @@
 const selectorButtons = document.querySelectorAll('.btn');
 const ShoppingCardItemsContainer = document.querySelector('.shoppingCard')
+const buttonQuestions= document.querySelectorAll(".linkQuestions")
+const textQuestion=document.querySelectorAll(".pQuestion")
+const arrowQuestion=document.querySelectorAll(".arrowQuestion")
+console.log(arrowQuestion);
 
 
 
@@ -56,6 +60,19 @@ function addItemtoShoppingCard(tittleProduct, priceProduct, imgProduct) {
 function updateShoppingCardTotal() {
     let total = 0
 }
+
+buttonQuestions.forEach((buttonQuestion,key)=>{
+    buttonQuestion.addEventListener("click", ()=>{
+        event.preventDefault()
+        textQuestion[key].classList.toggle("open_close")
+    })
+})
+
+
+
+
+
+
 
 
 
