@@ -1,10 +1,9 @@
 const selectorButtons = document.querySelectorAll('.btn');
 const ShoppingCardItemsContainer = document.querySelector('.shoppingCard')
-const buttonQuestions= document.querySelectorAll(".linkQuestions")
-const textQuestion=document.querySelectorAll(".pQuestion")
-const arrowQuestion=document.querySelectorAll(".arrowQuestion")
-console.log(arrowQuestion);
-
+//desplegable
+const buttonQuestions = document.querySelectorAll(".linkQuestions")
+const textQuestion = document.querySelectorAll(".pQuestion")
+const arrowQuestion = document.querySelectorAll(".arrowQuestion")
 
 
 selectorButtons.forEach((addToCardButton) => {
@@ -52,7 +51,6 @@ function addItemtoShoppingCard(tittleProduct, priceProduct, imgProduct) {
     ;
     shoppingCardRow.innerHTML = shoppingCardContent
     ShoppingCardItemsContainer.appendChild(shoppingCardRow)
-    console.log(ShoppingCardItemsContainer);
     updateShoppingCardTotal()
 
 }
@@ -60,14 +58,41 @@ function addItemtoShoppingCard(tittleProduct, priceProduct, imgProduct) {
 function updateShoppingCardTotal() {
     let total = 0
 }
-
-buttonQuestions.forEach((buttonQuestion,key)=>{
-    buttonQuestion.addEventListener("click", ()=>{
+//desplegable
+buttonQuestions.forEach((buttonQuestion, key) => {
+    buttonQuestion.addEventListener("click", () => {
         event.preventDefault()
         textQuestion[key].classList.toggle("open_close")
     })
 })
 
+//validacion formulario
+let form = document.querySelector('#theForm')
+let nameInput = document.querySelector('#NameForm')
+let emailInput = document.querySelector('#emailForm')
+let movilInput = document.querySelector('#PhoneForm')
+let textAreaInput = document.querySelector('#textArea1')
+let checkBoxInput = document.querySelector('#checkBoxForm')
+let button = document.querySelector('#enviarForm')
+
+
+
+
+const formValidationName = (e) => {
+    e.preventDefault()
+    if (!nameInput.value) {
+        alert('Introduce tu nombre')
+        nameInput.focus()
+        return
+    }
+    if (!emailInput.value.includes('@')) {
+        alert('Introduce un correo con @')
+        emailInput.focus()
+        return
+    }
+}
+
+form.addEventListener('submit', formValidationName)
 
 
 
@@ -82,51 +107,8 @@ buttonQuestions.forEach((buttonQuestion,key)=>{
 
 
 
-// const bagIconButton = document.querySelector("#bagIcon")
-// const selectorButtons = document.querySelectorAll(".btn")
-// const cafeCostaRica = document.querySelector("#cafeCostaRica")
-// const cafeLosNaranjos = document.querySelector("#cafeLosNaranjos")
-// const cafeLaosAmanecer = document.querySelector("#cafeLaosAmanecer")
-// const cafeYrgacheff = document.querySelector("#cafeYrgacheff")
-// const nameValues = document.querySelectorAll(".card-title")
-// const priceValues = document.querySelectorAll(".card-text")
-//------opcion 1--------//
-
-// selectorButtons.forEach(addToCardButton => {
-//     addToCardButton.addEventListener("click", () => console.log("click"))
-// })
 
 
-//opcion 2
-
-// const allProducts = document.querySelector(".productCardWrapper")
-
-
-// //funtions
-
-// loadEventListenrs()
-// function loadEventListenrs() {
-//     allProducts.addEventListener(`click`, addProduct)
-// }
-
-// function addProduct(e) {
-//     e.preventDefault()
-//     if (e.target.classList.contains("addProduct")) {
-//         const button = e.target;
-//         const item = button.closest(".card-body")
-//         const tittleProduct = item.querySelector(".card-title").textContent;
-//         const priceProduct = item.querySelector(".price").textContent * 1;
-//         // const imgProduct = item.querySelector("img").src;
-//         // console.log(imgProduct);
-
-//         addItemToBag(tittleProduct, priceProduct)
-//     }
-//     function addItemToBag(tittleProduct, priceProduct) {
-//         console.log(tittleProduct, priceProduct);
-
-//     }
-// }
-// // let shoppinBag = localStorage.getItem("product") ? JSON.parse(localStorage.getItem("product")) : []
 
 
 

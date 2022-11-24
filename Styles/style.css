@@ -331,13 +331,14 @@ div.section6 {
 
 .section7 {
     background-color: #E3DED7;
+    height: auto;
 }
 
 .form {
     display: flex;
     flex-direction: column;
     width: 588px;
-    height: 552px;
+    height: auto;
     background-color: #FFFFFF;
 }
 
@@ -434,7 +435,9 @@ label {
     height: 40px;
     text-decoration: none;
     margin-top: 10px;
+    margin-bottom: 40px;
     border-radius: 4px;
+
 }
 
 .privacyandTerms {
@@ -628,4 +631,9 @@ footer {
 .open_close{
     max-height: 500px;
     transition: max-height 0.5s ease-in;
+}
+
+.error-text{
+    color:#ca3434;
+    visibility: hidden;
 }
