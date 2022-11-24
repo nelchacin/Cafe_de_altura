@@ -61,14 +61,14 @@ nav a {
 div.section2 {
     display: flex;
     align-items: flex-start;
-    background-color: 
-    rgb(227, 222, 215, 0.3);
+    background-color:
+        rgb(227, 222, 215, 0.3);
 }
 
 .section2text {
     padding-top: 130px;
     padding-left: 50px;
-   
+
 
 }
 
@@ -84,13 +84,15 @@ p.section2P {
 
 .aSection2 {
     text-decoration: none;
-    box-shadow: 0px 0px 4px #515051;;
+    box-shadow: 0px 0px 4px #515051;
+    ;
 
 }
-.section2Img img{
+
+.section2Img img {
     box-shadow: 0px 0px 4px #515051;
 }
-  
+
 
 #buttonDescubrir {
     background-color: black;
@@ -527,34 +529,74 @@ footer {
     ;
 }
 
-#heroImage{
+#heroImage {
     border-radius: 20px;
 }
 
-#localPicture{
+#localPicture {
     border-radius: 20px;
 }
 
-#localPicture{
+#localPicture {
     border-radius: 20px;
 }
 
-.shoppingCard {
-    color: whitesmoke;
-    position: absolute;
-    bottom: 550px;
+.divShoppingCard {
+    display: inline-block;
+}
+
+/* .shoppingCard {
+    position: absolute!important;
     top: 60px;
-    left: 1362.9px;
-    width: 200px;
-    height: 260px;
+    left: 1295px;
+    color: whitesmoke;
+    font-size: 10px;
+    padding: 30px;
     background-color: #2B2A2B;
-    transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
-                 transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
-   }
-   
-   .shoppingCard:hover {
-    border-bottom-right-radius: 50px;
-    border-top-left-radius: 50px;
-    transform: scale(1.05);
-   }
-   
+    max-width: 250px;
+
+}
+
+.imgShoppingCard{
+    width: 50px;
+    height: 50px;
+}
+.itemIntheCard{
+    display: inline-block;
+    padding: 15px;
+    margin: 20px;
+    
+
+} */
+.shoppingCard{
+    background-color: #2B2A2B;
+    color: whitesmoke;
+    width: 400px;
+    height: 200px;
+}
+
+.shopping-cart-items {
+    background-color: #2B2A2B;
+    padding: 20px 0px;
+  }
+  
+  .shopping-cart-header {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .shopping-cart-image {
+    max-width: 80px;
+    border-radius: 20px;
+  }
+  
+  .shopping-cart-quantity-input {
+    max-width: 45px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #eee;
+    padding: 5px;
+  }
+  
+  .shopping-cart-total {
+    min-height: 96px;
+  }
