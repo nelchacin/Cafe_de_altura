@@ -579,16 +579,22 @@ footer {
 
 } */
 .shoppingCard{
+    position: absolute;
+    top: 40px;
+    right: 310.5px;
     background-color: #2B2A2B;
     color: whitesmoke;
-    font-size: 10px;
+    font-size: 14px;
     width: 600px;
     height: auto;
+    padding: 0px,10px,15px,0px;
+    display:none
 }
 
 .shopping-cart-items {
     background-color: #2B2A2B;
-    padding: 20px
+    padding: 40px;
+    
   }
   
   .shopping-cart-header {
@@ -610,6 +616,7 @@ footer {
   
   .shopping-cart-total {
     min-height: 96px;
+    
   }
   
   .linkQuestions{
@@ -637,3 +644,8 @@ footer {
     color:#ca3434;
     visibility: hidden;
 }
+
+.buttonDelete{
+ margin-right: 40px;   
+}
+

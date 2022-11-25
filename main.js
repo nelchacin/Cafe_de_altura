@@ -1,11 +1,13 @@
+// carrito 
 const selectorButtons = document.querySelectorAll('.btn');
 const ShoppingCardItemsContainer = document.querySelector('.shoppingCard')
+const buttonBag= document.querySelector('#buttonBag')
 //desplegable
 const buttonQuestions = document.querySelectorAll(".linkQuestions")
 const textQuestion = document.querySelectorAll(".pQuestion")
 const arrowQuestion = document.querySelectorAll(".arrowQuestion")
 
-
+console.log(ShoppingCardItemsContainer);
 selectorButtons.forEach((addToCardButton) => {
     addToCardButton.addEventListener('click', addToCardClicked)
 });
@@ -55,16 +57,37 @@ function addItemtoShoppingCard(tittleProduct, priceProduct, imgProduct) {
 
 }
 
+buttonBag.onclick = (e) => {
+
+    if (ShoppingCardItemsContainer.style.display==='none') {
+        ShoppingCardItemsContainer.style.display='Block'
+
+    } else {
+        ShoppingCardItemsContainer.style.display='none'
+        // title2.classList.add('red')
+    }
+}
+
 function updateShoppingCardTotal() {
     let total = 0
 }
 //desplegable
+const chevronUp = document.querySelectorAll(".arrowQuestion")
 buttonQuestions.forEach((buttonQuestion, key) => {
     buttonQuestion.addEventListener("click", () => {
         event.preventDefault()
         textQuestion[key].classList.toggle("open_close")
+        rotate(chevronUp[key])
     })
 })
+const rotate = (img) => {
+    if (img.style.transform === '') {
+        img.style.transform = 'rotate(180deg)'
+        img.style.transition = "all 0.4s"
+    } else {
+        img.style.transform = ''
+    }
+}
 
 //validacion formulario
 let form = document.querySelector('#theForm')
@@ -90,9 +113,25 @@ const formValidationName = (e) => {
         emailInput.focus()
         return
     }
+    if (!(movilInput.value*1)) {
+        alert('Introduce un numero de telefono correcto')
+        movilInput.focus()
+        return
+    }
+    if (textAreaInput.value="") {
+        alert('¿En que podemos ayudarte?')
+        textAreaInput.focus()
+        return
+    } if (!checkBoxInput.checked){
+
+    }
 }
 
 form.addEventListener('submit', formValidationName)
+
+
+
+
 
 
 
