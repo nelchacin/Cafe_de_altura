@@ -1,13 +1,16 @@
-// carrito 
+// llamadas carrito 
 const selectorButtons = document.querySelectorAll('.btn');
 const ShoppingCardItemsContainer = document.querySelector('.shoppingCard')
-const buttonBag= document.querySelector('#buttonBag')
-//desplegable
+const buttonBag = document.querySelector('#buttonBag')
+const firstShop = document.querySelector('.firstDivCart')
+
+
+//llamadas desplegable
 const buttonQuestions = document.querySelectorAll(".linkQuestions")
 const textQuestion = document.querySelectorAll(".pQuestion")
 const arrowQuestion = document.querySelectorAll(".arrowQuestion")
 
-console.log(ShoppingCardItemsContainer);
+
 selectorButtons.forEach((addToCardButton) => {
     addToCardButton.addEventListener('click', addToCardClicked)
 });
@@ -22,9 +25,20 @@ function addToCardClicked(event) {
     const imgProduct = item.querySelector('.imgSec4').src;
 
     addItemtoShoppingCard(tittleProduct, priceProduct.toFixed(2), imgProduct)
+
 }
 
 function addItemtoShoppingCard(tittleProduct, priceProduct, imgProduct) {
+
+    const elementsTitle = ShoppingCardItemsContainer.getElementsByClassName('shoppingCartItemTitle')
+    for (let i = 0; i < elementsTitle.length; i++) {
+        if (elementsTitle[i].innerText === tittleProduct) {
+            let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.shoppingCartItemQuantity')
+            elementQuantity.value++;
+            updateShoppingCartTotal()
+            return
+        }
+    }
     const shoppingCardRow = document.createElement('div')
     shoppingCardRow.classList.add("itemInTheCard")
 
@@ -53,24 +67,61 @@ function addItemtoShoppingCard(tittleProduct, priceProduct, imgProduct) {
     ;
     shoppingCardRow.innerHTML = shoppingCardContent
     ShoppingCardItemsContainer.appendChild(shoppingCardRow)
-    updateShoppingCardTotal()
+    updateShoppingCartTotal()
+
+    shoppingCardRow
+        .querySelector('.buttonDelete')
+        .addEventListener('click', removeShoppingCartItem);
+    updateShoppingCartTotal()
+
+    shoppingCardRow.querySelector('.shoppingCartItemQuantity')
+        .addEventListener('change', quantityChanged);
 
 }
+
+function updateShoppingCartTotal() {
+    let total = 0;
+    const shoppingCartTotal = document.querySelector('.totalPrice')
+    shoppingcartItems = document.querySelectorAll('.shoppingCartItem')
+
+    shoppingcartItems.forEach(shoppingCartItem => {
+        const shoppingCartItemElement = shoppingCartItem.querySelector('.shoppingCartItemPrice')
+        const shoppingCartItemPrice = Number(shoppingCartItemElement.textContent.replace('€', ''))
+        const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity')
+        const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value)
+        total = total + shoppingCartItemPrice * shoppingCartItemQuantity
+        total.toFixed(2)
+    })
+    shoppingCartTotal.innerHTML = `${total}`
+
+
+
+}
+function removeShoppingCartItem(event) {
+    const buttonClicked = event.target;
+    buttonClicked.closest('.shoppingCartItem').remove();
+    updateShoppingCartTotal()
+
+}
+
+function quantityChanged(event) {
+    const input = event.target
+    input.value <= 0 ? (input.value = 1) : null
+    updateShoppingCartTotal()
+}
+
 
 buttonBag.onclick = (e) => {
 
-    if (ShoppingCardItemsContainer.style.display==='none') {
-        ShoppingCardItemsContainer.style.display='Block'
+    if (ShoppingCardItemsContainer.style.display === 'none') {
+        ShoppingCardItemsContainer.style.display = 'Block'
 
     } else {
-        ShoppingCardItemsContainer.style.display='none'
-        // title2.classList.add('red')
+        ShoppingCardItemsContainer.style.display = 'none'
     }
 }
 
-function updateShoppingCardTotal() {
-    let total = 0
-}
+
 //desplegable
 const chevronUp = document.querySelectorAll(".arrowQuestion")
 buttonQuestions.forEach((buttonQuestion, key) => {
@@ -113,17 +164,17 @@ const formValidationName = (e) => {
         emailInput.focus()
         return
     }
-    if (!(movilInput.value*1)) {
-        alert('Introduce un numero de telefono correcto')
+    if (!(movilInput.value * 1)) {
+        alert('Introduce un número de teléfono correcto')
         movilInput.focus()
         return
     }
-    if (textAreaInput.value="") {
+    if (textAreaInput.value === "") {
         alert('¿En que podemos ayudarte?')
         textAreaInput.focus()
         return
-    } if (!checkBoxInput.checked){
-
+    } if (!checkBoxForm.checked) {
+        alert('¿Acepta las políticas de Privacidad y los terminso de condiciones?')
     }
 }
 
