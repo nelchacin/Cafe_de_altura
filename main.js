@@ -173,8 +173,9 @@ const formValidationName = (e) => {
         alert('¿En que podemos ayudarte?')
         textAreaInput.focus()
         return
-    } if (!checkBoxForm.checked) {
+    } if (!checkBoxInput.value.checked) {
         alert('¿Acepta las políticas de Privacidad y los terminso de condiciones?')
+        return
     }
 }
 
